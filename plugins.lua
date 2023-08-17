@@ -80,31 +80,25 @@ local plugins = {
       require("orgmode").setup({
         org_agenda_files = { "~/decode-it/newauro/**/*" },
         -- org_default_notes_file = "~/org/refile.org",
-        org_todo_keywords = { "INBOX(i)", "UNCLEAR(u)", "TODO(t)", "ACTIVE(a)", "NEXT(n)", "VALIDATION(v)", "REWORK(r)", "WAITING(w)", "BLOCKED(b)", "CANCELED(c)", "(-)", "|", "DONE(d)" },
+        org_todo_keywords = { "TODO(t)", "UNCLEAR(u)", "ACTIVE(a)", "NEXT(n)", "CHECK(c)", "REWORK(r)", "WAITING(w)", "BLOCKED(b)", "CANCELED(x)", "(-)", "|", "DONE(d)" },
         org_todo_keyword_faces = {
-          INBOX = ":foreground yellow",
-          UNCLEAR = ":background red",
-          TODO = ":foreground red",
+          UNCLEAR = ":foreground red",
+          TODO = ":foreground orange",
           ACTIVE = ":foreground cyan",
-          NEXT = ":foreground orange",
-          VALIDATION = ":foreground DarkViolet",
-          REWORK = ":background Violet",
+          NEXT = ":foreground yellow",
+          CHECK = ":foreground DarkViolet",
+          REWORK = ":foreground Violet",
 
-          WAITING = ":background darkgrey",
-          BLOCKED = ":background grey",
+          WAITING = ":foreground darkgrey",
+          BLOCKED = ":background darkgrey",
           CANCELED = ":foreground grey",
         },
         org_log_done = false,
         org_capture_templates = {
-          i = {
-            description = "Inbox",
-            template = "* INBOX %?\n%U",
-            target = "~/decode-it/newauro/inbox.org",
-          },
           t = {
             description = "Todo",
-            template = "* TODO %?\n%U",
-            target = "~/decode-it/newauro/todo.org",
+            template = "* TODO %? %U",
+            target = "~/decode-it/newauro/inbox.org",
           },
           j = {
             description = "Journal",

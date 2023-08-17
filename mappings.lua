@@ -6,6 +6,7 @@ M.general = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["gt"] = {":bnext<cr>"},
     ["gT"] = {":bprevious<cr>"},
+    ['<leader>bp'] = {':b#<cr>'},
   },
 }
 
