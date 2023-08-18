@@ -114,6 +114,9 @@ local plugins = {
         org_priority_highest = "A",
         org_priority_default = "C",
         org_priority_lowest = "E",
+        win_split_mode = "vertical",
+        org_tags_column = 0,
+        org_blank_before_new_entry = { heading = false, plain_list_item = false},
       })
     end,
   },
