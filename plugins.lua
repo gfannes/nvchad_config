@@ -80,18 +80,21 @@ local plugins = {
       require("orgmode").setup({
         org_agenda_files = { "~/decode-it/newauro/**/*" },
         -- org_default_notes_file = "~/org/refile.org",
-        org_todo_keywords = { "TODO(t)", "UNCLEAR(u)", "ACTIVE(a)", "NEXT(n)", "CHECK(c)", "REWORK(r)", "WAITING(w)", "BLOCKED(b)", "CANCELED(x)", "(-)", "|", "DONE(d)" },
+        org_todo_keywords = { "TODO(t)", "QUESTION(q)", "ACTIVE(a)", "NEXT(n)", "FOCUS(f)", "CHECK(c)", "REWORK(r)", "WAITING(w)", "BLOCKED(b)", "CANCELED(x)", "(-)", "|", "DONE(d)" },
         org_todo_keyword_faces = {
-          UNCLEAR = ":foreground red",
+          QUESTION = ":foreground purple",
           TODO = ":foreground orange",
-          ACTIVE = ":foreground cyan",
+          ACTIVE = ":foreground slateblue",
           NEXT = ":foreground yellow",
+          FOCUS = ":foreground cyan",
           CHECK = ":foreground DarkViolet",
           REWORK = ":foreground Violet",
 
           WAITING = ":foreground darkgrey",
           BLOCKED = ":background darkgrey",
           CANCELED = ":foreground grey",
+
+          DONE = ":foreground olive",
         },
         org_log_done = false,
         org_capture_templates = {
@@ -114,6 +117,8 @@ local plugins = {
         org_priority_highest = "A",
         org_priority_default = "C",
         org_priority_lowest = "E",
+        org_agenda_skip_scheduled_if_done = true,
+        org_agenda_skip_deadline_if_done = true,
         win_split_mode = "vertical",
         org_tags_column = 0,
         org_blank_before_new_entry = { heading = false, plain_list_item = false},
@@ -128,6 +133,16 @@ local plugins = {
         lualine_c = {{"filename", path = 2}},
       }
     }
+  },
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
   },
 }
 
