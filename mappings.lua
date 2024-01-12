@@ -13,6 +13,11 @@ M.general = {
       "formatting",
     }
 
+    -- My keybindings
+    ["gt"] = {":bnext<cr>"},
+    ["gT"] = {":bprevious<cr>"},
+    ['<leader>bp'] = {':b#<cr>'},
+
   },
   v = {
     [">"] = { ">gv", "indent"},
