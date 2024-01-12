@@ -11,7 +11,7 @@ M.general = {
         require("conform").format()
       end,
       "formatting",
-    }
+    },
 
     -- My keybindings
     ["gt"] = {":bnext<cr>"},
